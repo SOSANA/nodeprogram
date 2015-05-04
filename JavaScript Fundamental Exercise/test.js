@@ -5,6 +5,4 @@
 * Time: 02:18 AM
 * To change this template use Tools | Templates.
 */
-define(function() {
-return {};
-});
+
