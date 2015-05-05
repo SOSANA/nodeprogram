@@ -1,3 +1,0 @@
-var module = require('./module')
-var arr = [1, 2, 3]
-console.log(module.f(arr,2)) // [3]

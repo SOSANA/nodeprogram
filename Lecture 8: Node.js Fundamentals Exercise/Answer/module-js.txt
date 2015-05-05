@@ -1,3 +1,0 @@
-exports.f = function(arr, num){
-  return arr.slice(num)
-}
