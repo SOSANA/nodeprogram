@@ -7,8 +7,8 @@
 */
 
 var slice = require('./slicer');
-var arr = [1,2,3];
-console.log(slice.f(arr,2));
+var name = [1,2,3];
+console.log(slice.f(name,2));
 
 
 /*
