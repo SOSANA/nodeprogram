@@ -1,8 +1,3 @@
-/*
- * Hello World Server
- * Go to "Rapid Protoyping with JS" epub p.128-129 and review 6.1.2 Node.js Core Modules
- * 
-*/
 
 var http = require('http');
 var port = process.env.PORT || 3000;
