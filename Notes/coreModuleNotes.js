@@ -1,5 +1,5 @@
 /*
- * Notes taken from "Rapid Protoyping with JS" epub p.128-129 and review 6.1.2 Node.js Core Modules
+ * Notes taken from "Rapid Protoyping with JS" epub p.128-129 from 6.1.2 Node.js Core Modules
  * 
  * Node.js Core Modules
  * There is no need to install or download core modules. To include them in your application, all you 
