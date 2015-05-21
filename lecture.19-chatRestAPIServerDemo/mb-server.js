@@ -69,7 +69,7 @@ exports.server = http.createServer(function (req, res) {
             res.end(message);
         })
         
-    } else
+    } else {
         // If the method is GET and the URL is /messages/list.json output a list of messages:
         if (req.method == "GET" && req.url == "/messages/list.json") {
             // Fetch a list of messages. Body will hold our output:
@@ -84,6 +84,7 @@ exports.server = http.createServer(function (req, res) {
             // sets the right header and status code  
             res.writeHead(200, {'Content-Type': 'text/plain'});
             res.end('Hello World\n');
+    }
     };
     // In case it’s neither of the two endpoints above, we output a string with a line-end symbol: 
     console.log(req.method);
