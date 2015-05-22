@@ -9,14 +9,13 @@ var util = require('util');
 var querystring = require('querystring');
 var mongo = require('mongodb');
 
-// put make a string to connect to MongoDB:
-var host = "mongodb://@127.0.0.1:27017/messages";
+// make a string to connect to MongoDB:
+var host = "mongodb://@127.0.0.1:27017/test";
 
 // We put all the logic inside of an open connection in the form of a callback function:
 mongo.Db.connect(host, function(error, client) {
-    
-	if (error) throw error;
     console.log("this is working");
+	if (error) throw error;
 	
     var collection = new mongo.Collection(client, 'messages');
 	
