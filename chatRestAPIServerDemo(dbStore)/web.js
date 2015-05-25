@@ -24,8 +24,8 @@ var querystring = require('querystring');
 var MongoClient = require('mongodb').MongoClient;
 var mongo = new MongoClient();
 
-// make a string to connect to MongoDB:
-var host = "mongodb://localhost/test";
+// connect to MongoDB:
+var host = "mongodb://localhost/";
 
 // We put all the logic inside of an open connection in the form of a callback function:
 mongo.connect(host, function(error, db) {
