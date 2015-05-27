@@ -16,7 +16,10 @@
  * NOTE: Looking into Mocha, Super Agent, & Expect
 */
 
+// Super Agent is light-weight progressive ajax API crafted for flexibility, readability, 
+// and a low learning curve after being frustrated with many of the existing request APIs. 
 var superagent = require('superagent')
+// Minimalistic BDD assertion toolkit based on should.js
 var expect = require('expect.js')
 
 describe('express rest api server', function(){
