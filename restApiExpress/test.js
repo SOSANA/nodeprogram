@@ -14,6 +14,11 @@
  * on Mocha, we won’t go into the details of test suits.
  * 
  * NOTE: Looking into Mocha, Super Agent, & Expect
+ * 
+ * To run the tests, we can use the $ mocha test.js command (if you have Mocha globally)
+ * or $ ./node_modules/mocha/bin/mocha test.js.
+ * 
+ * 
 */
 
 var superagent = require('superagent')
@@ -21,7 +26,7 @@ var expect = require('expect.js')
 
 describe('express rest api server', function(){
   var id
-
+  // posts an object
   it('posts an object', function(done){
     superagent.post('http://localhost:3000/collections/test')
       .send({ name: 'John'
@@ -36,7 +41,7 @@ describe('express rest api server', function(){
         done()
       })
   })
-
+  // retrieves an object
   it('retrieves an object', function(done){
     superagent.get('http://localhost:3000/collections/test/'+id)
       .end(function(e, res){
@@ -48,7 +53,7 @@ describe('express rest api server', function(){
         done()
       })
   })
-
+  // retrieves a collection
   it('retrieves a collection', function(done){
     superagent.get('http://localhost:3000/collections/test')
       .end(function(e, res){
@@ -59,7 +64,7 @@ describe('express rest api server', function(){
         done()
       })
   })
-
+  // updates an object
   it('updates an object', function(done){
     superagent.put('http://localhost:3000/collections/test/'+id)
       .send({name: 'Peter'
@@ -72,7 +77,7 @@ describe('express rest api server', function(){
         done()
       })
   })
-
+  // checks an updated object
   it('checks an updated object', function(done){
     superagent.get('http://localhost:3000/collections/test/'+id)
       .end(function(e, res){
@@ -85,6 +90,7 @@ describe('express rest api server', function(){
         done()
       })
   })
+  // removes an object
   it('removes an object', function(done){
     superagent.del('http://localhost:3000/collections/test/'+id)
       .end(function(e, res){
