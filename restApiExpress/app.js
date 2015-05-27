@@ -1,7 +1,5 @@
 /*
- * node program manual p.59 or http://webapplog.com/express-js-4-node-js-and-mongodb-rest-api-tutorial/
- *  
- * github source code: https://github.com/azat-co/rest-api-express
+ * node program manual p.59 | github source code: https://github.com/azat-co/rest-api-express
  * 
  * Mongoskin
  * a MongoDB library which is a better alternative to the plain, good old native MongoDB driver
@@ -16,7 +14,7 @@
  * 
 */
 
-// Express.js streamlines the instantiation of its app instance, this line will give us a server object:
+// this line will give us a server object:
 var express = require('express'),
     // lightweight ODM
     mongoskin = require('mongoskin'),
@@ -24,13 +22,24 @@ var express = require('express'),
     bodyParser = require('body-parser')
     logger = require('morgan');
 
+// Express.js streamlines the instantiation of its app instance:
 var app = express();
+    // To extract params from the body of the requests, we’ll use bodyParser() middleware which looks more 
+    // like a configuration statement:
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(logger('dev'));
 
+// connect to the MongoDB database:
+// Note: If you wish to connect to a remote database, e.g., MongoHQ instance, substitute the
+// string with your username, password, host and port values. 
 var db = mongoskin.db('mongodb://@localhost:27017/test', {safe:true});
 
+// The app.param() method is another Express.js middleware. It basically says “do something every
+// time there is this value in the URL pattern of the request handler”. In our case, we select a particular
+// collection when request pattern contains a sting collectionName prefixed with a colon (you’ll see it
+// later in the routes). Then, we save that collection as a property (collection but could be anything)
+// of the request object (widespread req), which will be available in the next request handlers:
 app.param('collectionName', function(req, res, next, collectionName){
     req.collection = db.collection(collectionName);
     return next();
