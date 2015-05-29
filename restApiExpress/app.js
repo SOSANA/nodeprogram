@@ -22,8 +22,6 @@
  * http://localhost:3000/collections/test13. Or if we don’t trust server results (why wouldn’t we? but let’s pretend 
  * we don’t), we can open MongoDB shell ($ mongo) and type: > db.test13.find()
  * 
- * 
- * 
 */
 
 // this line will give us a server object:
