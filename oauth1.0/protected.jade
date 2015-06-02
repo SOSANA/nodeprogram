@@ -1,0 +1,7 @@
+extends layout
+block page
+    - var menu = 'protected'
+block content
+    div.admin
+        p This is your Twitter user information:
+        textarea(cols="120", rows="40")= JSON.stringify(everyauth.twitter, 0, 2)
